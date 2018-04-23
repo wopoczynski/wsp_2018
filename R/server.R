@@ -4,8 +4,7 @@ library(png)
 
 
 shinyServer(function(input, output,session) {
-  setwd('D:/Users/sstudent/Documents/R/rstudio_test')
-  #source(paste(getwd(),'R','functions.r',sep='/'))
+  # source(paste(getwd(),'R','functions.r',sep='/'))
   
   user_id=sample(1000000:9999999,1)
   
