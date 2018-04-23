@@ -35,3 +35,5 @@ vignettes/*.pdf
 #phpstorm
 .idea
 
+.Rproj.user
+/*.Rproj
