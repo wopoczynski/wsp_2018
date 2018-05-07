@@ -24,7 +24,7 @@ data <- read.table("datasetA_scans.txt", header = T, sep = "\t")
 desc <- read.AnnotatedDataFrame("datasetA_scans.txt", header = T, sep = "\t", 
                                 row.names = 4, stringsAsFactors = F)
 sampleNames(desc) = paste(sampleNames(desc), ".CEL", sep = "")
-dataAffy = ReadAffy(filenames = sampleNames(desc))
+dataAffy = ReadAffy(verbose=TRUE, filenames=sampleNames(desc))
 dataAffy@cdfName = paste("ga", dataAffy@cdfName, sep = "")
 dataAffy@annotation = paste("ga", dataAffy@annotation, sep = "")
 RMA = rma(raw.data)
