@@ -35,3 +35,14 @@ vignettes/*.pdf
 #phpstorm
 .idea
 
+#cell
+
+.CEL
+.cel
+.CELL
+.cell
+
+.pdf
+zrodlo.txt
+
+.Rproj.user
