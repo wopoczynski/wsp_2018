@@ -42,4 +42,4 @@ featN = dim(ExprSet)[1]
 cutoff = round(featN*0.025)
 indClear = exprSort$ix[c(1:cutoff, (featN - cutoff):featN)]
 
-ExprSet = ExprSet[-indClear]
+ExprSet = ExprSet[-indClear,NULL]
