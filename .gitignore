@@ -45,3 +45,5 @@ vignettes/*.pdf
 .pdf
 zrodlo.txt
 
+.Rproj.user
+/*.Rproj
