@@ -25,9 +25,9 @@ vignettes/*.pdf
 #phpstorm
 .idea
 .Rproj.user
-/*.Rproj
+*.Rproj
 *.CEL
 *.pdf
 *.txt
 R
-/*.RDataTmp
+*.RDataTmp
