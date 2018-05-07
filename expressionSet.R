@@ -2,13 +2,13 @@ source("http://bioconductor.org/biocLite.R")#ściąga skrypt instalacyjny
 
 setwd(paste(getwd(),"/data", sep=""))
 
-# biocLite("BiocUpgrade")#uaktualnia, istnieje również mozliwość aktualizacji
-# biocLite("affy")
-#working replacement for *.db lib
-# biocLite("gplots")
-# biocLite("convert")
-# biocLite("Biobase")
-# biocLite("gahgu95av2cdf")
+biocLite("BiocUpgrade")#uaktualnia, istnieje również mozliwość aktualizacji
+biocLite("affy")
+biocLite("hgu95av2cdf") #working replacement for *.db lib
+biocLite("gplots")
+biocLite("convert")
+biocLite("Biobase")
+biocLite("gahgu95av2cdf")
 
 library("Biobase")
 library("affy")
