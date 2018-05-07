@@ -8,7 +8,6 @@ biocLite("hgu95av2cdf") #working replacement for *.db lib
 biocLite("gplots")
 biocLite("convert")
 biocLite("Biobase")
-biocLite("gahgu95av2cdf")
 
 library("Biobase")
 library("affy")
@@ -30,8 +29,11 @@ dataAffy = ReadAffy(verbose=TRUE, filenames=sampleNames(description))
 dataAffy@cdfName = paste("ga", dataAffy@cdfName, sep = "")
 dataAffy@annotation = paste("ga", dataAffy@annotation, sep = "")
 
-# nie działa funkcja rma znaleźć alternatywe
-normRMA = rma(dataAffy)
+# nie działa funkcja rma znaleźć alternatywe bo bez tego dalej nie poleci
+normRMA = expresso(dataAffy, normalize.method = 'rma',
+                   normalize.method="constant",pmcorrect.method="pmonly",
+                   summary.method="avgdiff")
+
 dataRMA = exprs(normRMA)
 
 
