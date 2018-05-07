@@ -24,14 +24,15 @@ ExpressionSet <- setClass(
 
     validity = function(object)
     {
-    #     todo
+    #     todo validate object
     }
 )
 
+#MicroarrayData setter
 setGeneric(name = "setMicroarrayData",
     def = function(theObject,data)
     {
-        standardGeneric("setLocation")
+        standardGeneric("setMicroarrayData")
     }
 )
 
@@ -44,3 +45,81 @@ setMethod(f="setMicroarrayData",
         return(theObject)
     })
 
+#microarrayData getter
+setGeneric(name = "getMicroarrayData",
+           def = function(theObject)
+           {
+               standardGeneric("getMicroarrayData")
+           }
+)
+
+setMethod(f="getMicroarrayData",
+          signature = "ExpressionSet",
+          definition = function(theObject)
+          {
+              return(theObject@microarrayData)
+          })
+
+#normalizationType setter
+setGeneric(name = "setNormalizationType",
+           def = function(theObject,normalizationType)
+           {
+               standardGeneric("setNormalizationType")
+           }
+)
+
+setMethod(f="setNormalizationType",
+          signature = "ExpressionSet",
+          definition = function(theObject,normalizationType)
+          {
+              theObject@normalizationType <- normalizationType
+              validObject(theObject)
+              return(theObject)
+          })
+
+#normalizationType getter
+setGeneric(name = "getNormalizationType",
+           def = function(theObject)
+           {
+               standardGeneric("getNormalizationType")
+           }
+)
+
+setMethod(f="getNormalizationType",
+          signature = "ExpressionSet",
+          definition = function(theObject)
+          {
+              return(theObject@normalizationType)
+          })
+
+#description setter
+setGeneric(name = "setDescription",
+           def = function(theObject,description)
+           {
+               standardGeneric("setDescription")
+           }
+)
+
+setMethod(f="setDescription",
+          signature = "ExpressionSet",
+          definition = function(theObject,description)
+          {
+              theObject@description <- description
+              validObject(theObject)
+              return(theObject)
+          })
+
+#description getter
+setGeneric(name = "getdescription",
+           def = function(theObject)
+           {
+               standardGeneric("getdescription")
+           }
+)
+
+setMethod(f="getdescription",
+          signature = "ExpressionSet",
+          definition = function(theObject)
+          {
+              return(theObject@description)
+          })
