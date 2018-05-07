@@ -1,6 +1,6 @@
 source("http://bioconductor.org/biocLite.R")#ściąga skrypt instalacyjny
 
-setwd("C:/Users/Wojtek/source/repos/wsp_2018")
+setwd("C:/Users/Wojtek/source/repos/wsp_2018/wsp")
 
 # biocLite("BiocUpgrade")#uaktualnia, istnieje również mozliwość aktualizacji
 # biocLite("affy")
@@ -20,11 +20,11 @@ rm(list = ls())
 
 #tworzenie pełnego objektu ExpressionSet(zgodnie z instrukcją z pdf)
 
-data <- read.table("wsp/datasetA_scans.txt", header = T, sep = "\t")
-desc <- read.AnnotatedDataFrame("wsp/datasetA_scans.txt", header = T, sep = "\t", 
+data <- read.table("datasetA_scans.txt", header = T, sep = "\t")
+desc <- read.AnnotatedDataFrame("datasetA_scans.txt", header = T, sep = "\t", 
                                 row.names = 4, stringsAsFactors = F)
 sampleNames(desc) = paste(sampleNames(desc), ".CEL", sep = "")
-dataAffy = ReadAffy(verbose = TRUE, filenames = sampleNames(desc))
+dataAffy = ReadAffy(filenames = sampleNames(desc))
 dataAffy@cdfName = paste("ga", dataAffy@cdfName, sep = "")
 dataAffy@annotation = paste("ga", dataAffy@annotation, sep = "")
 RMA = rma(raw.data)
