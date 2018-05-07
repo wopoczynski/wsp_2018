@@ -37,5 +37,10 @@ setGeneric(name = "setMicroarrayData",
 
 setMethod(f="setMicroarrayData",
     signature = "ExpressionSet",
-    definition = )
+    definition = function(theObject,microarrayData)
+        {
+        theObject@microarrayData <- microarrayData
+        validObject(theObject)
+        return(theObject)
+    })
 
