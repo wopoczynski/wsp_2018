@@ -1,0 +1,8 @@
+TODO LIST/PROJECT MANAGEMENT
+
+1. GIT integration/merges/pullrequests - Wojtek
+2. FIX pliku wczytującego dane - Karol
+3. Znalezienie wersji R dopasowanej do wymaganych pakietów - Basia
+4. Kamila - Wstępne wczytanie danych 
+5. Utworzenie obiektu ExpressionSet - Fabio, Marta, Kamila, Karol, Wojtek, Basia
+6. ...
