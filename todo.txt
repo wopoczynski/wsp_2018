@@ -11,4 +11,4 @@ Basia - PCA
 Karol/Fabio - klasyfikacja/volcanoplot
 Kamila - shiny
 Wojtek - git, funkcje,, integracja
-Basa/Marta- klasteryzacja hierarchiczna 
+Basa/Marta- klasteryzacja hierarchiczna i jeszcze jakaś
