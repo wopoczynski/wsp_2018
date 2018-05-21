@@ -1,11 +1,11 @@
 # required libs
 source("http://bioconductor.org/biocLite.R")#ściąga skrypt instalacyjny
-
-biocLite("biocUpgrade")
-biocLite("affy")
-biocLite("gahgu95av2.db")
-biocLite("gplots")
-biocLite("gahgu95av2cdf")
+# 
+# biocLite("biocUpgrade")
+# biocLite("affy")
+# biocLite("gahgu95av2.db")
+# biocLite("gplots")
+# biocLite("gahgu95av2cdf")
 
 library("Biobase")
 library("affy")
