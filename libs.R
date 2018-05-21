@@ -1,5 +1,5 @@
 # required libs
-source("http://bioconductor.org/biocLite.R")#ściąga skrypt instalacyjny
+# source("http://bioconductor.org/biocLite.R")#ściąga skrypt instalacyjny
 # 
 # biocLite("biocUpgrade")
 # biocLite("affy")

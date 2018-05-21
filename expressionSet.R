@@ -1,7 +1,9 @@
-source(paste(getwd(),"/libs.R", sep=""))
-source("PCA.R")
 # clear env
 rm(list = ls())
+
+# load data
+source(paste(getwd(),"/libs.R", sep=""))
+source("PCA.R")
 
 #tworzenie pełnego objektu ExpressionSet(zgodnie z instrukcją z pdf)
 
@@ -34,3 +36,4 @@ ExprSet = ExprSet[-indClear, ]
 
 #funckja PCA
 PCA(ExprSet)
+
