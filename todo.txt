@@ -7,7 +7,8 @@ TODO LIST/PROJECT MANAGEMENT
 5. Utworzenie obiektu ExpressionSet - Fabio, Marta, Kamila, Karol, Wojtek, Basia
 6. ...
 
-Basia/Marta - PCA
-Karol/Fabio - klasteryzacja /klasyfikacja/volcanoplot
+Basia - PCA
+Karol/Fabio - klasyfikacja/volcanoplot
 Kamila - shiny
 Wojtek - git, funkcje,, integracja
+Basa/Marta- klasteryzacja hierarchiczna 
