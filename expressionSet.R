@@ -1,5 +1,5 @@
 source(paste(getwd(),"/libs.R", sep=""))
-
+source("PCA.R")
 # clear env
 rm(list = ls())
 
@@ -30,5 +30,7 @@ featN = dim(ExprSet)[1]
 cutoff = round(featN*0.025)
 indClear = exprSort$ix[c(1:cutoff, (featN - cutoff):featN)]
 
-ExprSet = ExprSet[-indClear, NULL]
+ExprSet = ExprSet[-indClear, ]
 
+#funckja PCA
+PCA(ExprSet)
