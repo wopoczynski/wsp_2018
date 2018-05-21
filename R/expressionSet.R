@@ -2,12 +2,12 @@
 rm(list = ls())
 
 # load data
-source(paste(getwd(),"/libs.R", sep=""))
-source("PCA.R")
+source(paste(getwd(),"/R/libs.R", sep=""))
+source(paste(getwd(),"/R/PCA.R", sep=""))
 
 #tworzenie pełnego objektu ExpressionSet(zgodnie z instrukcją z pdf)
 
-setwd(paste(getwd(),"/../data", sep=""))
+setwd(paste(getwd(),"/data", sep=""))
 
 data <- read.table("datasetA_scans.txt", header = T, sep = "\t")
 description <- read.AnnotatedDataFrame("datasetA_scans.txt", header = T, sep = "\t", 
