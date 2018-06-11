@@ -2,6 +2,7 @@
 rm(list = ls())
 
 # load data
+setwd('..')
 source(paste(getwd(),"/R/libs.R", sep=""))
 source(paste(getwd(),"/R/PCA.R", sep=""))
 
@@ -36,4 +37,5 @@ ExprSet = ExprSet[-indClear, ]
 
 #funckja PCA
 PCA(ExprSet)
+
 
