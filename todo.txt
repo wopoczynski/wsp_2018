@@ -11,5 +11,5 @@ Basia - PCA
 Karol/Fabio - klasyfikacja/volcanoplot/heatmaps
 Kamila - shiny
 Wojtek - git, funkcje merge, integracja 
-Basia/Marta- klasteryzacja hierarchiczna/ k-means/ wykrs degradacji RNA
+Basia/Marta- klasteryzacja hierarchiczna/ k-means/ wykres degradacji RNA
 
