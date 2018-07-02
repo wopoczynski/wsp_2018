@@ -8,7 +8,7 @@ TODO LIST/PROJECT MANAGEMENT
 6. ...
 
 Basia - PCA
-Karol/Fabio - klasyfikacja/volcanoplot
+Karol/Fabio - klasyfikacja/volcanoplot/heatmaps
 Kamila - shiny
 Wojtek - git, funkcje merge, integracja 
-Basia/Marta- klasteryzacja hierarchiczna i jeszcze jakaś
+Basia/Marta- klasteryzacja hierarchiczna i k-means
