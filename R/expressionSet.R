@@ -2,7 +2,7 @@
 rm(list = ls())
 
 # load data
-setwd('..')
+setwd('...')
 source(paste(getwd(),"/R/libs.R", sep=""))
 source(paste(getwd(),"/R/PCA.R", sep=""))
 
