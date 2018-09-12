@@ -35,6 +35,6 @@ indClear = exprSort$ix[c(1:cutoff, (featN - cutoff):featN)]
 
 ExpressionSet = ExprSet[-indClear, ]
 setwd('..')
-save(ExpressionSet, dataAffy, file='full.RData')
+save(ExpressionSet, file='data.RData')
 #funckja PCA
 # PCA(ExprSet)

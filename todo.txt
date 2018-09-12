@@ -13,3 +13,6 @@ Kamila - shiny frontend, integracja
 Wojtek - git, funkcje merge, integracja, shiny backend
 Basia/Marta- klasteryzacja hierarchiczna/ k-means/ wykres degradacji RNA
 
+__
+wojtek: degradacja RNA nie jest możliwa do wykonania ze względu na wymagane dane pliku (200mb w input webowy to przegiecie ;) ) 
+volcano plot nie dziala na ExpressionSet

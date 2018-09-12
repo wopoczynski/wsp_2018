@@ -1,10 +1,11 @@
 library(shiny)
+
 load('data.RData')
 
 shinyServer(function(input, output, session) {
     
     source(paste(getwd(),"/R/libs.R", sep=""))
-    source(paste(getwd(),"/R/Degradacja_RNA.R", sep=""))
+    # source(paste(getwd(),"/R/Degradacja_RNA.R", sep=""))
     source(paste(getwd(),"/R/PCA.R", sep=""))
     source(paste(getwd(),"/R/Vplot.R", sep=""))
     source(paste(getwd(),"/R/heatmaps.R", sep=""))
@@ -29,11 +30,11 @@ shinyServer(function(input, output, session) {
     })
     
     
-    observeEvent(input$degradation,{
-        output$plot <- renderPlot({
-            Degradacja_RNA(dataAffy, input$degA, input$degB)
-        })
-    })
+    # observeEvent(input$degradation,{
+    #     output$plot <- renderPlot({
+    #         Degradacja_RNA(dataAffy, input$degA, input$degB)
+    #     })
+    # })
 
     observeEvent(input$heatmaps,{
         output$plot <- renderPlot({

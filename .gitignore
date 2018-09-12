@@ -31,3 +31,4 @@ vignettes/*.pdf
 *.txt
 R
 *.RDataTmp
+full.RData
