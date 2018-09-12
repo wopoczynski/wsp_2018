@@ -2,7 +2,7 @@
 # rm(list = ls())
 
 # load data
-setwd('...')
+setwd('..')
 source(paste(getwd(),"/R/libs.R", sep=""))
 source(paste(getwd(),"/R/PCA.R", sep=""))
 
@@ -33,9 +33,8 @@ featN = dim(ExprSet)[1]
 cutoff = round(featN*0.025)
 indClear = exprSort$ix[c(1:cutoff, (featN - cutoff):featN)]
 
-ExprSet = ExprSet[-indClear, ]
-
+ExpressionSet = ExprSet[-indClear, ]
+setwd('..')
+save(ExpressionSet, dataAffy, file='full.RData')
 #funckja PCA
-PCA(ExprSet)
-
-
+# PCA(ExprSet)

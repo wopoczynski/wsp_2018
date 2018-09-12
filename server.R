@@ -1,45 +1,63 @@
 library(shiny)
-source(paste(getwd(),"/R/libs.R", sep=""))
-source(paste(getwd(),"/R/Degradacja_RNA.R", sep=""))
-source(paste(getwd(),"/R/PCA.R", sep=""))
-source(paste(getwd(),"/R/Vplot.R", sep=""))
-source(paste(getwd(),"/R/heatmaps.R", sep=""))
-source(paste(getwd(),"/R/Klasteryzacja_hierarchiczna.R", sep=""))
-source(paste(getwd(),"/R/Klasteryzacja_kmeans.R", sep=""))
-source(paste(getwd(),"/R/Klasteryzacja_kmeans.R", sep=""))
+load('data.RData')
 
+shinyServer(function(input, output, session) {
+    
+    source(paste(getwd(),"/R/libs.R", sep=""))
+    source(paste(getwd(),"/R/Degradacja_RNA.R", sep=""))
+    source(paste(getwd(),"/R/PCA.R", sep=""))
+    source(paste(getwd(),"/R/Vplot.R", sep=""))
+    source(paste(getwd(),"/R/heatmaps.R", sep=""))
+    source(paste(getwd(),"/R/Klasteryzacja_hierarchiczna.R", sep=""))
+    source(paste(getwd(),"/R/Klasteryzacja_kmeans.R", sep=""))
 
-shinyServer(function(input, output) {
-
-    options(shiny.maxRequestSize=15*1024^2)  
+    options(shiny.maxRequestSize=500*1024^2)  
     
     dataframe<-reactive({
         validate(
-            need(input$file != '', 'Please Load CEL file')
+            need(input$file != '', 'Please Load file with ExpressionSet')
         )
-        # po wczytaniu pliku powinno tutaj utworzyc obiekt expression set        
-        data <- read.table(input$file, header = T, sep = "\t")
-        description <- read.AnnotatedDataFrame(input$file, header = T, sep = "\t",
-                                               row.names = 4, stringsAsFactors = F)
-        sampleNames(description) = paste(sampleNames(description), ".CEL", sep = "")
-        dataAffy = ReadAffy(verbose=TRUE, filenames=sampleNames(description))
-        dataAffy@cdfName = paste("ga", dataAffy@cdfName, sep = "")
-        dataAffy@annotation = paste("ga", dataAffy@annotation, sep = "")
-
-        normRMA = rma(dataAffy)
-        dataRMA = exprs(normRMA)
-        ExprSet = new("ExpressionSet", expr = dataRMA, phenoData = description,
-                      experimentData = experiment, annotation = "hgu95av2cdf")
-        exprSort = sort(rowMeans(exprs(ExprSet)), index.return = T)
-        featN = dim(ExprSet)[1]
-        cutoff = round(featN*0.025)
-        indClear = exprSort$ix[c(1:cutoff, (featN - cutoff):featN)]
-        ExprSet = ExprSet[-indClear, ]
-        return(ExprSet)
+        
+        load(input$file$datapath, envir = .GlobalEnv)
     })
 
     # jeśli jest obiekt expression set utworzony to odbieramy eventy i w zaleznosci od wybranej opcji uzywamy funkcji
-        observeEvent(input$PCA,{
-            PCA(dataframe())
+    observeEvent(input$PCA,{
+        output$plot <- renderPlot({
+            PCA(ExpressionSet)
         })
+    })
+    
+    
+    observeEvent(input$degradation,{
+        output$plot <- renderPlot({
+            Degradacja_RNA(dataAffy, input$degA, input$degB)
+        })
+    })
+
+    observeEvent(input$heatmaps,{
+        output$plot <- renderPlot({
+            heatmaps(ExpressionSet)
+        })
+    })
+    
+    observeEvent(input$clusterHierarh,{
+        output$plot <- renderPlot({
+            Klasteryzacja_hierarchiczna(ExpressionSet, input$a, input$b, input$c, input$d)
+        })
+    })
+    
+    # todo
+    observeEvent(input$clusterKmeans,{
+        output$plot <- renderPlot({
+            Klasteryzacja_kmeans(ExpressionSet, input$clust)
+        })
+    })
+    # todo
+    observeEvent(input$Vplot,{
+        output$plot <- renderPlot({
+            Vplot(ExpressionSet, 2, 0.05)
+        })
+    })
+
 })

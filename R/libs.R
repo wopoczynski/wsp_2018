@@ -6,7 +6,8 @@
 # biocLite("gplots")
 # install.packages(paste(getwd(),"/packages/gahgu95av2.db_2.2.0.tar.gz", sep=""), repos = NULL, type="source")
 # install.packages(paste(getwd(),"/packages/gahgu95av2cdf_2.2.1.tar.gz", sep=""), repos = NULL, type="source")
-
+# biocLite("Ckmeans.1d.dp")
+library("Ckmeans.1d.dp")
 library("Biobase")
 library('affy')
 library('gplots')
