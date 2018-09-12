@@ -5,8 +5,8 @@ if(interactive()){
         titlePanel('WSP2018'),
         sidebarLayout(   ##cialo layout
             sidebarPanel(  ##lewa kolumna
-                titlePanel("Wybierz dane"),
-                fileInput("file", "Load file with ExpressionSet and dataAffy objects",accept = NULL, placeholder = '.Rdata') 
+                # titlePanel("Wybierz dane"),
+                # fileInput("file", "Load file with ExpressionSet and dataAffy objects",accept = NULL, placeholder = '.Rdata') 
             ),#koniec sidebarPanel
             mainPanel(  ##prawa kolumna 
                 titlePanel('Wybierz akcję:'),
