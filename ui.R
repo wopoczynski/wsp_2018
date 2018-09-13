@@ -5,25 +5,24 @@ if(interactive()){
         titlePanel('WSP2018'),
         sidebarLayout(   ##cialo layout
             sidebarPanel(  ##lewa kolumna
-                # titlePanel("Wybierz dane"),
+               titlePanel("Parameters for functions"),
                 # fileInput("file", "Load file with ExpressionSet and dataAffy objects",accept = NULL, placeholder = '.Rdata') 
+              numericInput('a','Hierarhical value a', 2),
+              numericInput('b','Hierarhical value b', 20),
+              numericInput('c','Hierarhical value c', 5),
+              numericInput('d','Hierarhical value d', 15),
+              hr(),
+              numericInput('clust','Cluster amounts', 8)
             ),#koniec sidebarPanel
             mainPanel(  ##prawa kolumna 
-                titlePanel('Wybierz akcję:'),
+                titlePanel('Choose function:'),
                 actionButton('PCA','PCA'),
                 # actionButton('degradation','Degradacja RNA'),
-                actionButton('heatmaps','Heatmapa'),
+                actionButton('heatmaps','Heatmap'),
                 actionButton('clusterHierarh','Klasteryzacja Hierarchiczna'),
                 actionButton('clusterKmeans','Klasteryzacja K-means'),
                 # actionButton('Vplot','Volcano Plot',class = 'disabled'),
                 br(),
-                # numericInput('degA','Degradation value from', 10),
-                # numericInput('degB','Degradation value to', 50),
-                numericInput('a','Hierarhical value a', 2),
-                numericInput('b','Hierarhical value a', 20),
-                numericInput('c','Hierarhical value a', 5),
-                numericInput('d','Hierarhical value a', 15),
-                numericInput('clust','Cluster amounts', 8),
                 
                 hr(),
                 plotOutput('plot')
