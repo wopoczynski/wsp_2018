@@ -9,8 +9,8 @@ TODO LIST/PROJECT MANAGEMENT
 
 Basia - PCA
 Karol/Fabio - klasyfikacja/volcanoplot/heatmaps
-Kamila - shiny frontend, integracja 
-Wojtek - git, funkcje merge, integracja, shiny backend
+Kamila - shiny frontend, integracja poprawki do funkcji: heatmap,
+Wojtek - git, funkcje merge i poprawki, integracja, shiny backend
 Basia/Marta- klasteryzacja hierarchiczna/ k-means/ wykres degradacji RNA
 
 __
